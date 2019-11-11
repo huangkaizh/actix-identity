@@ -125,8 +125,8 @@ impl Identity {
 }
 
 pub struct IdentityItem {
-    id: Option<String>,
-    changed: bool,
+    pub id: Option<String>,
+    pub changed: bool,
 }
 
 /// Helper trait that allows to get Identity.
