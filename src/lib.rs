@@ -124,7 +124,7 @@ impl Identity {
     }
 }
 
-struct IdentityItem {
+pub struct IdentityItem {
     id: Option<String>,
     changed: bool,
 }
@@ -364,7 +364,7 @@ impl CookieIdentityInner {
         let mut cookie =
             Cookie::new(self.name.clone(), val.unwrap_or_else(|| Ok(String::new()))?);
         cookie.set_path(self.path.clone());
-        cookie.set_secure(self.secure);
+        cookie.set_secure(self.secure.clone());
         cookie.set_http_only(true);
 
         if let Some(ref domain) = self.domain {
